@@ -17,10 +17,10 @@ class Dispenser_cooler_box(models.Model):
 
 
 class Delivery(models.Model):
-    order=models.ForeignKey(Order,on_delete=models.CASCADE)
+    order=models.ForeignKey('Order',on_delete=models.CASCADE)
     dispatch_time=models.DateTimeField()
-    Shipping_provider=models.ForeignKey(Order,on_delete=models.CASCADE)
-    cooler_box=models.ForeignKey(Order,on_delete=models.CASCADE)
+    shipping_provider=models.ForeignKey('Shipping_Provider',on_delete=models.CASCADE)
+    cooler_box=models.ForeignKey('Cooler_Box',on_delete=models.CASCADE)
 
 
 
